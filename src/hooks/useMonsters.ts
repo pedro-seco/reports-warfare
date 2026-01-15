@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import type { MonsterDetail, MonsterSummary } from "../utils/interfaces";
+import type { MonsterDetailInterface, MonsterSummary } from "../utils/interfaces";
 
 
 export const useMonster = () => {
@@ -8,7 +8,7 @@ export const useMonster = () => {
 
     const fetchData = useCallback(async (): Promise<MonsterSummary[]> => {
         try {
-            const res = await fetch('https://www.dnd5eapi.co/api/2014/monsters');
+            const res = await fetch(import.meta.env.VITE_MONSTER_API_BASE_URL);
             const data = await res.json();
             console.log(data.results);
             return data.results 
@@ -19,16 +19,16 @@ export const useMonster = () => {
         return fetchData();
     },[fetchData] )
 
-    const getMonster = async (name:string): Promise<MonsterDetail | null> =>{
+    const getMonster = async (name:string): Promise<MonsterDetailInterface | null> =>{
         setLoading(true);
         setError(null);
         try{
-            const res = await fetch(`${import.meta.env.MONSTER_API_BASE_URL}${name.toLowerCase().replace(" ","-")}`)
+            const res = await fetch(`https://www.dnd5eapi.co/api/2014/monsters/${name.trim().toLowerCase().replace(/\s+/g,"-")}`)
             if(!res.ok){
                 throw new Error('Monster not Found.')
             }
             const data = await res.json();
-            return data as MonsterDetail;
+            return data as MonsterDetailInterface;
 
         } catch(err) {
             setError(err instanceof Error ? err.message : 'Failed to fetch.');

@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { Actions, ArmorClass, Condition, LegendaryActions, Proficiency, Senses, SpecialAbilities, Speed } from "./types";
 
-export interface MonsterDetail {
+export interface MonsterDetailInterface {
   index: string;
   name: string;
   size: string;
@@ -56,5 +56,6 @@ export interface ResultsListProps {
 
 export interface MonsterListProps {
     monsters: MonsterSummary[];
+    onSelect: (monster: MonsterSummary) => void;
     loading: boolean;
 }

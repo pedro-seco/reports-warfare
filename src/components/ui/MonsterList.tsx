@@ -2,7 +2,7 @@ import type React from "react";
 import type { MonsterListProps } from "../../utils/interfaces";
 
 
-export const MonsterList: React.FC<MonsterListProps> = ({monsters, loading}) => {
+export const MonsterList: React.FC<MonsterListProps> = ({monsters, onSelect, loading}) => {
     return (
         <div>
             <div>
@@ -16,7 +16,7 @@ export const MonsterList: React.FC<MonsterListProps> = ({monsters, loading}) => 
                 {monsters.map((m) => (
                 <li key={m.index}>
                     <button
-                    onClick={() => alert(`You selected ${m.name}`)}
+                    onClick={() => onSelect(m)}
                     >
                         {m.name}
                     </button>
