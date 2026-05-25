@@ -1,12 +1,8 @@
-/* ── Layout ───────────────────────────────────────── */
-
 .app {
   display: flex;
   height: 100vh;
   overflow: hidden;
 }
-
-/* ── Search Panel ─────────────────────────────────── */
 
 .search-panel {
   width: 300px;
@@ -21,7 +17,7 @@
 
 .search-panel__header {
   padding: 18px 14px 14px;
-  background: linear-gradient(180deg, var(--crimson) 0%, var(--crimson-dark) 100%);
+  background: linear-gradient(180deg, var(--cobalt) 0%, var(--cobalt-dark) 100%);
   border-bottom: 2px solid var(--gold-dim);
   text-align: center;
   flex-shrink: 0;
@@ -124,8 +120,6 @@
   color: var(--text);
 }
 
-/* ── Monster List ──────────────────────────────────── */
-
 .search-results {
   flex: 1;
   overflow-y: auto;
@@ -152,7 +146,7 @@
 }
 
 .search-status--error {
-  color: var(--crimson-bright);
+  color: var(--cobalt-bright);
 }
 
 @keyframes spin {
@@ -192,7 +186,52 @@
   outline-offset: -2px;
 }
 
-/* ── Statblocks Area ──────────────────────────────── */
+.statblocks-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.statblocks-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.statblocks-filter {
+  flex: 1;
+  padding: 6px 10px;
+  background: var(--surface-3);
+  border: 1px solid var(--border-light);
+  border-radius: 2px;
+  color: var(--text-bright);
+  outline: none;
+  font-size: 0.82rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.statblocks-filter::placeholder {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.statblocks-filter:focus {
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 0 2px rgba(139, 107, 48, 0.2);
+}
+
+.statblocks-toolbar__count {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
 
 .statblocks-area {
   flex: 1;
@@ -225,8 +264,6 @@
   line-height: 1;
 }
 
-/* ── Statblock Skeleton ───────────────────────────── */
-
 @keyframes shimmer {
   0% { background-position: -400px 0; }
   100% { background-position: 400px 0; }
@@ -236,7 +273,7 @@
   width: 280px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-top: 3px solid var(--crimson);
+  border-top: 3px solid var(--cobalt);
   padding: 14px;
   display: flex;
   flex-direction: column;
@@ -261,13 +298,11 @@
   height: 12px;
 }
 
-/* ── Stat Block ───────────────────────────────────── */
-
 .statblock {
   width: 280px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-top: 3px solid var(--crimson-light);
+  border-top: 3px solid var(--cobalt-light);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(201, 168, 76, 0.08);
   font-size: 0.82rem;
   position: relative;
@@ -276,7 +311,7 @@
 }
 
 .statblock__header {
-  background: linear-gradient(180deg, #3d0a0a 0%, #260707 100%);
+  background: linear-gradient(180deg, #071540 0%, #040d2a 100%);
   padding: 12px 34px 10px 12px;
   border-bottom: 1px solid var(--gold-dim);
 }
@@ -317,8 +352,8 @@
 }
 
 .statblock__close:hover {
-  background: var(--crimson);
-  border-color: var(--crimson-bright);
+  background: var(--cobalt);
+  border-color: var(--cobalt-bright);
   color: var(--text-bright);
 }
 
@@ -341,7 +376,7 @@
 
 .statblock__row-label {
   font-weight: bold;
-  color: var(--crimson-bright);
+  color: var(--cobalt-bright);
   font-family: var(--font-heading);
   font-size: 0.75rem;
   white-space: nowrap;
@@ -363,7 +398,7 @@
 .statblock__ability-name {
   font-family: var(--font-heading);
   font-size: 0.58rem;
-  color: var(--crimson-bright);
+  color: var(--cobalt-bright);
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -420,8 +455,6 @@
   font-size: 0.78rem;
   margin-bottom: 4px;
 }
-
-/* ── Responsive ──────────────────────────────────── */
 
 @media (max-width: 768px) {
   .app {

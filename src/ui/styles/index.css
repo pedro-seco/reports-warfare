@@ -10,18 +10,18 @@
   --gold-dim: #8b6b30;
   --gold-bright: #e8c870;
 
-  --crimson: #6e1010;
-  --crimson-dark: #3d0a0a;
-  --crimson-light: #9e1e1e;
-  --crimson-bright: #c42828;
+  --cobalt: #0d2d6e;
+  --cobalt-dark: #071540;
+  --cobalt-light: #1a4db5;
+  --cobalt-bright: #4080f0;
 
   --text: #c8b898;
   --text-dim: #7a6e58;
   --text-bright: #e8d8b8;
 
-  --font-display: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
-  --font-heading: 'Cinzel', Georgia, serif;
-  --font-body: 'IM Fell English', 'Palatino Linotype', Palatino, serif;
+  --font-display: 'Roboto Condensed', Roboto, Helvetica, sans-serif;
+  --font-heading: 'Roboto Condensed', Roboto, Helvetica, sans-serif;
+  --font-body: 'Roboto Condensed', Roboto, Helvetica, sans-serif;
 }
 
 *, *::before, *::after {

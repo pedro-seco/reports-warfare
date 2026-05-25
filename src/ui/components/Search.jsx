@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { fetchMonsterList, CR_MAP } from '../dndApi';
+import { fetchMonsterList, CR_MAP } from '../../dndApi';
 
 const CR_OPTIONS = ['', '0', '1/8', '1/4', '1/2', ...Array.from({ length: 30 }, (_, i) => String(i + 1))];
 

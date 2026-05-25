@@ -1,4 +1,4 @@
-import { abilityMod, crToDisplay } from '../dndApi';
+import { abilityMod, crToDisplay } from '../../dndApi';
 
 const ABILITIES = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'];
 const ABILITY_SHORT = { strength: 'STR', dexterity: 'DEX', constitution: 'CON', intelligence: 'INT', wisdom: 'WIS', charisma: 'CHA' };
