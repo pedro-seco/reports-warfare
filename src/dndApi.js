@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.dnd5eapi.co/api';
+const BASE_URL = import.meta.env.VITE_API_URL ?? 'https://www.dnd5eapi.co/api';
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
 function getCached(key) {
